@@ -79,3 +79,22 @@ cudaError_t gemm_naive(
         return launch_naive(mat_A, mat_B, mat_C, m, k, n, alpha, beta, lda, ldb, ldc, stream);
     }
 }
+
+
+//
+// Templates to compile
+//
+
+template cudaError_t gemm_naive<double>(
+        double*, double*, double*, 
+        int, int, int, 
+        double, double, 
+        int, int, int, 
+        cudaStream_t);
+
+template cudaError_t gemm_naive<float>(
+        float*, float*, float*, 
+        int, int, int, 
+        float, float, 
+        int, int, int, 
+        cudaStream_t);
