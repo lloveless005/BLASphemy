@@ -21,7 +21,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(INC_DIR)/*.h | $(OBJ_DIR)
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	rm -f $(OBJ_DIR)/*.o $(BIN_DIR)/* input/* 
 
 $(OBJ_DIR) $(BIN_DIR):
 	mkdir -p $@
